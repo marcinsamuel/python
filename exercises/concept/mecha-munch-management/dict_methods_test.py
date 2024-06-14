@@ -1,7 +1,7 @@
 import unittest
 import pytest
 from collections import OrderedDict
-from dict_methods import (add_item,
+from dict_methods import (add_items,
                           read_notes,
                           update_recipes,
                           sort_entries,
@@ -12,7 +12,7 @@ from dict_methods import (add_item,
 class MechaMunchManagementTest(unittest.TestCase):
 
     @pytest.mark.task(taskno=1)
-    def test_add_item(self):
+    def test_add_items(self):
         input_data = [
                       ({'Apple': 1, 'Banana': 4 }, ('Apple', 'Banana', 'Orange')),
                       ({'Orange': 1, 'Raspberry': 1, 'Blueberries': 10}, ['Raspberry', 'Blueberries', 'Raspberry']),
@@ -25,8 +25,8 @@ class MechaMunchManagementTest(unittest.TestCase):
 
         for variant, (input_data, expected) in enumerate(zip(input_data, output_data), start=1):
             with self.subTest(f'variation #{variant}', input_data=input_data, expected=expected):
-                actual_result = add_item(input_data[0], input_data[1])
-                error_msg= (f'Called add_item({input_data[0]}, {input_data[1]}). '
+                actual_result = add_items(input_data[0], input_data[1])
+                error_msg= (f'Called add_items({input_data[0]}, {input_data[1]}). '
                             f'The function returned {actual_result}, but the tests '
                             f'expected: {expected} once the item was added.')
 
