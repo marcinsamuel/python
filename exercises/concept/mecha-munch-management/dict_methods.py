@@ -1,7 +1,7 @@
 """Functions to manage a users shopping cart items."""
 
 
-def add_item(current_cart, items_to_add):
+def add_items(current_cart, items_to_add):
     """Add items to shopping cart.
 
     :param current_cart: dict - the current shopping cart.
